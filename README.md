@@ -1,3 +1,6 @@
+#### Deployed Site on Firebase: https://fyle-frontend-assignment.web.app/
+
+
 ## Installation
 
 1. Fork this repository to your github account.
