@@ -1,5 +1,4 @@
-#### Deployed Site on Firebase: https://fyle-frontend-assignment.web.app/
-
+#### Deployed Site on Firebase: https://fylefrontendassign.web.app/
 
 ## Installation
 

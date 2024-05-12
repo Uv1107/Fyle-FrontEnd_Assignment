@@ -1,4 +1,5 @@
- <!--  Main Profile Display Component -->
+
+<!--  Main Profile Display Component -->
 <div class="mt-12 w-full mb-20">
   <!-- User Details Section -->
   <div class="flex flex-row gap-12 items-center" id="user-details">
@@ -66,7 +67,67 @@
     class="flex items-center justify-between border-t border-[#E5E4E2] py-3 mx-16 relative"
   >
     <div class="hidden sm:flex sm:flex-1 items-center sm:justify-between">
-      
+      <!-- Page Details -->;
+      <div>
+        <p class="text-sm text-[#E5E4E2] flex gap-2 items-center relative">
+          Rows per page:&nbsp;{{ pageSize }}
+          <span class="items-center flex">
+            <!-- Page Size DropDown -->
+            <div class="items-center flex relative">
+              <button
+                class="text-[#E5E4E2] bg-purple-500 font-medium rounded-lg text-sm px-2 text-center inline-flex items-center"
+                (mouseenter)="handleDropDown()"
+              >
+                <svg
+                  class="w-4 h-4 text-white"
+                  aria-hidden="true"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="3"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M19 9l-7 7-7-7"
+                  ></path>
+                </svg>
+              </button>
+              <div
+                id="dropdown"
+                (mouseleave)="handleDropDown()"
+                [ngClass]="{
+                  'z-10': true,
+                  'w-44': true,
+                  'bg-[#E5E4E2]': true,
+                  rounded: true,
+                  'divide-y': true,
+                  'divide-gray-100': true,
+                  shadow: true,
+                  block: isOpen,
+                  hidden: !isOpen,
+                }"
+                class="top-4 absolute"
+              >
+                <ul
+                  class="z-10 w-44 bg-[#E5E4E2] rounded divide-y text-black divide-gray-100 shadow"
+                >
+                  <li *ngFor="let i of pageOptions">
+                    <div
+                      (click)="setPageSize(i)"
+                      class="block py-2 px-4 hover:bg-[#0e4166]"
+                    >
+                      {{ i }}
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div></span
+          >
+        </p>
+      </div>
       <!-- Page Navigation Panel Display -->
       <div>
         <nav
